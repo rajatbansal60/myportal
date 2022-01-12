@@ -2,43 +2,45 @@ import React from "react";
 import LogoSrc from "../../images/logo.png";
 import styled from 'styled-components'
 import {Navbar, Nav, Container} from 'react-bootstrap';
-import {Header2} from './header_const.js';
+import { ToastContainer, toast } from 'react-toastify';
+// import '../react-toastify/dist/ReactToastify.css';
+import '../../../node_modules/react-toastify/dist/ReactToastify.css';
 
 export default function Header(){
 
 
-
-
-/* ... */
-
-
-
-// const header =styled{
-
-// }
-
-
-
-
-const Logo = styled.img`
-background: transparent;
-border-radius: 3px;
-border: 2px solid palevioletred;
-color: palevioletred;
-margin: 0 1em;
-padding: 0.25em 1em;
-`;
-   
+    const Header = styled.header`
+        .cuslogo img{
+            height: 40px;
+        }
+        .navbar-light .navbar-nav .nav-link:not(:last-child){
+            margin-right: 1.5em;
+        }
+        .navbar-light .navbar-nav .nav-link{
+            color: #fff;
+        }
+        .navbar-light .navbar-nav .nav-link.cusbtn{
+            color: #fff;
+            border: 1px solid #715f2c;
+            padding: 4px 15px 4px 10px;
+            border-radius: 7px;
+            text-transform: uppercase;
+        }
+        
+    `;
+    const LoginModal = () => toast.success("Click Successfully!");
     return(
         <>
-            <Header2>
-                <Navbar expand="lg">
+            <Header>
+                <Navbar bg="dark" expand="lg">
                     <Container>
-                        <Navbar.Brand className="cuslogo" href="#home"><Logo src={LogoSrc} alt="Logo" className="img-fluid" /></Navbar.Brand>
+                        <Navbar.Brand className="cuslogo" href="/"><img src={LogoSrc} alt="Logo" className="img-fluid" /></Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ms-auto">
-                                <Nav.Link href="#link">
+                                <Nav.Link href="/">Home</Nav.Link>
+                                <Nav.Link href="/about">About</Nav.Link>
+                                <Nav.Link href="#" className="cusbtn" onClick={LoginModal}>
                                     <lord-icon
                                     src="https://cdn.lordicon.com/dxjqoygy.json"
                                     trigger="loop"
@@ -50,7 +52,19 @@ padding: 0.25em 1em;
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-            </Header2>
+            </Header>
+
+            <ToastContainer 
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </>
     )
 }

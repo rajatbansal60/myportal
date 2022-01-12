@@ -1,10 +1,9 @@
 import React from 'react';
+import Homepage from '../Pages/homepage';
 
-const BodyWrapper = () => {
+export const BodyWrapper = () => {
     return (
-        <div>
-            
-        </div>
+        <Homepage />
     )
 }
 
