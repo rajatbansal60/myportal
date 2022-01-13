@@ -1,19 +1,13 @@
-import React from 'react';
-import { Routes, Route, Switch, Link } from "react-router-dom";
-import About from '../Pages/About';
-import Homepage from '../Pages/homepage';
+import { Routes, Route } from "react-router-dom";
+import Homepage from "../Pages/homepage";
+import About from "../Pages/About";
+// import
 
-const Navigation = () => {
-    return (
-        <Switch>
-            <Route path="/">
-                <Homepage />
-            </Route>
-            <Route path="/about">
-                <About />
-            </Route>
-        </Switch>
-    )
-}
+const Navigation = () => (
+  <Routes>
+    <Route exact path="/home" component={Homepage} />
+    <Route exact path="/about" component={About} />
+  </Routes>
+);
 
-export default Navigation
+export default Navigation;

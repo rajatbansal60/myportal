@@ -11,3 +11,19 @@ h1, h2, h3, h4{
 .Toastify__toast{
   min-height: unset !important;
 }
+.cusModal .modal-body .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  height: 32px;
+  width: 32px;
+  border-radius: 7px;
+  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 24%), 0px 0px 12px rgb(0 0 0 / 10%);
+  border: none !important;
+  font-size: 14px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
