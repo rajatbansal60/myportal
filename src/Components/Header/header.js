@@ -1,8 +1,9 @@
 import LogoSrc from "../../images/logo.png";
 import styled from "styled-components";
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Button } from "react-bootstrap";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import { LoginFrom } from "../LoginForm/LoginForm";
 // import '../react-toastify/dist/ReactToastify.css';
 import "../../../node_modules/react-toastify/dist/ReactToastify.css";
@@ -27,7 +28,7 @@ export default function Header() {
     }
   `;
 
-  const LoginModal = () => toast.success("Click Successfully!");
+  // const LoginModal = () => toast.success("Click Successfully!");
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -43,16 +44,27 @@ export default function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
-                <Nav.Link href="/home">Home</Nav.Link>
-                <Nav.Link href="/about">About</Nav.Link>
-                <Nav.Link href="#" className="cusbtn" onClick={handleShow}>
+                <NavLink className="nav-link" to="/">
+                  Home
+                </NavLink>
+                <NavLink className="nav-link" to="/about">
+                  About
+                </NavLink>
+                <NavLink className="nav-link" to="/blog">
+                  Blog
+                </NavLink>
+                <NavLink
+                  className="nav-link cusbtn"
+                  to="#"
+                  onClick={handleShow}
+                >
                   <lord-icon
                     src="https://cdn.lordicon.com/dxjqoygy.json"
                     trigger="loop"
                     colors="primary:#e8b730,secondary:#c79816"
                   ></lord-icon>
                   Login
-                </Nav.Link>
+                </NavLink>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -75,7 +87,7 @@ export default function Header() {
         </Modal.Body>
       </Modal>
 
-      <ToastContainer
+      {/* <ToastContainer
         position="bottom-right"
         autoClose={3000}
         hideProgressBar
@@ -85,7 +97,7 @@ export default function Header() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      /> */}
     </>
   );
 }

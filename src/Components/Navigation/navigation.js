@@ -1,11 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import Homepage from "../Pages/homepage";
 import About from "../Pages/About";
+import { Blog } from "../Pages/blog";
 
 const Navigation = () => (
   <Routes>
-    <Route path="/home" caseSensitive={false} element={<Homepage />} />
-    <Route path="/about" caseSensitive={false} element={<About />} />
+    <Route path="/" element={<Homepage />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/blog" element={<Blog />} />
   </Routes>
 );
 
